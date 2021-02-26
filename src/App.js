@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment,useState,useEffect, useReducer } from 'react';
+import NewComponent from './SharedContextComponent/NewComponent';
+import { SharedContextProvider } from './SharedContextComponent/SharedContext';
+import { Page1, Page3, Status,Page2 } from './UpdateContextComponent/UpdateContextStatus';
+import { StatusProvider } from './UpdateContextComponent/UpdateSharedContext';
+import UseReducerComponent from './UseReducerComponent/UseReducerComponent'
+import HandlingRenderComponent from './HandlingStateComponent/HandlingStateRender'
+import MyList from './HandlingEventComponent/HandlingEventComponent'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const items = [
+  { id: 0, name: "First" },
+  { id: 1, name: "Second" },
+  { id: 2, name: "Third" }
+];
+
+const App =()=>{
+
+  return(
+      <MyList items={items}/>
+    )
+
 }
-
-export default App;
+export default App
